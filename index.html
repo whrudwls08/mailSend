@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js"
+    ></script>
+    
+    <script type="text/javascript">
+      // init code 사용
+      // emailjs.init("//");
+      
+      // parameter 설정
+      const templateParams = {
+          title_mesagge: '첫번째 시도입니다.',
+          to_email: 'whrudwls08@naver.com',
+          // message: 'you have changed your password.', //내용
+          to_name: '조경진',  // 이름
+          // new_password: <?=$newPassword?> ,
+      };
+      
+      // email 송신 과정
+      emailjs.send('service_5z4zf0o', 'template_8zadslb', templateParams)
+          .then(function(response) {
+              console.log('SUCCESS!', response.status, response.text)	 //success
+          }, function(error) {
+              console.log('FAILED...', error)		//fail
+          });
+  </script>
+    <title>send Mail</title>
+  </head>
+  <body></body>
+</html>
